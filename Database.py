@@ -82,15 +82,16 @@ class Workshop(Base):
     
     @classmethod
     def hires_by_year_country(cls,session):
+        list_of_countries = ["United States of America", "Colombia", "Brazil", "Ecuador"]
         query = (
             session.query(
-                func.year(Workshop.Application_Date).label('Year'),
+                func.year(Workshop.Application_Date).label("Year"),
                 Workshop.Country,
-                func.count(Workshop.Is_Hired).label('Total_of_Hires')
+                func.count(Workshop.Is_Hired).label("Total_of_Hires")
             )
-            .filter(Workshop.Is_Hired == 1)
+            .filter(Workshop.Is_Hired == 1).filter(Workshop.Country.in_(list_of_countries))
             .group_by(func.year(Workshop.Application_Date), Workshop.Country)
-            .order_by('Year', text('Country'))
+            .order_by("Year", text("Country"))
             .all()
         )
 

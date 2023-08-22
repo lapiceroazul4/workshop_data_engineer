@@ -47,13 +47,13 @@ This file orchestrates the calls to the previously created functions, adhering t
 ## Conclusions
 
 - By scrutinizing the initial pie chart where candidates are grouped by technology, it becomes apparent that the most commonly used technologies are DevOps and Game Development. This observation could stem from various factors, such as the possibility that the company specializes in video game development.
-![Hires by Technology](/images/Hires_by_Technology.png)
+![Hires by Technology](/Viz/Hires_by_Technology.png)
 - Moving on to the second pie chart, which segregates candidates by seniority, we notice a certain balance in the demand across different seniority levels. The quantities hired for each seniority level are remarkably similar.
-![Hires by Seniority](/images/Hires_by_Seniority.png)
+![Hires by Seniority](/Viz/Hires_by_Seniority.png)
 - The third graph, a horizontal bar chart, presents the number of individuals hired by the company. Notably, there's a significant drop in hiring for the year 2022 compared to other years. While multiple reasons might account for this, a plausible explanation is that data collection concluded before the year's end, suggested by the absence of records past July.
-![Hires by Years](/images/Hires_by_Year.png)
+![Hires by Years](/Viz/Hires_by_Year.png)
 - In the fourth graph (multiline), a comparison is drawn among specific countries as requested. Intriguingly, the inverse correlation between Brazil and other countries in 2020 stands out. The underlying causes are varied and could be elucidated through a deeper understanding of the business context.
-![Hires by Countries over the years](/images/Hires_by_year_countries.png)
+![Hires by Countries over the years](/Viz/Hires_by_year_countries.png)
 
 ## Usage
 

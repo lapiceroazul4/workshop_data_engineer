@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np 
 
 class transformations():
 
@@ -22,11 +23,10 @@ class transformations():
         }
         self.df.rename(columns=new_columns, inplace=True)
         #El csv no cuenta con la columna "Is_hired", la creamos con uso de pandas
-        if (any(self.df["code_challenge_score"] >= 7)) and (any(self.df["technical_interview_score"] >= 7)) :
-            self.df["is_hired"] = 1
-        else:
-            self.df["is_hired"] = 0
-        
+        self.df["is_hired"] = self.df.apply(lambda row: 1 if row["code_challenge_score"] >= 7 and row["technical_interview_score"] >= 7 else 0, axis=1)
+
+
+
     def importing_db(self, engine):
         self.df.to_sql("candidates", con=engine, if_exists="replace", index_label="candidate_id")
         print("Succesfully Created")

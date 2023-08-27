@@ -1,68 +1,36 @@
 # workshop_data_engineer
 # Repository ReadMe
 
-## Dataset Exploration
+## Project Usability and Potential Applications
 
-Upon reviewing the CSV file, we can extract valuable information. Firstly, it becomes apparent that the file follows a well-defined format, which we can categorize as a fact table. Furthermore, it contains no null values, and the column names provide sufficient indications of their respective meanings.
+Welcome to the workshop_data_engineer project! This README focuses on illustrating the project's potential applications and how it can be useful.
 
-## Brief Explanation of Files
+### Understanding Project Scope
 
-### Python Files
+The main objective of this project is to showcase a practical implementation of Extract, Transform, Load (ETL) processes using Python and SQLAlchemy. The project revolves around a dataset containing candidate information from a Technology company. Through various operations, we extract insights, transform data, and load it into a database for analysis.
 
-#### [Database.py]
+### Potential Usages
 
-This file handles the database connection using the ORM, SQLAlchemy.
-- We begin with the necessary imports, noting that only specific SQLAlchemy functionalities required for the project have been imported.
-- The "db_config" JSON file is read, containing database access information. If you intend to use this code, ensure to provide your own credentials.
-- The Workshop class is created, establishing a connection to the MySQL database. The connection is indicated by the (Base) attribute. Subsequently, we define the database columns and their characteristics.
-- The constructor ("__init__") requires a session argument. This session is needed to execute subsequent class functions.
-- Following are functions to perform CRUD operations (Create, Read, Update, Delete). Given project requirements, the focus is on querying the database. The following functions cater to these needs:
-  - `hires_by_technology`
-  - `hires_by_year`
-  - `hires_by_seniority`
-  - `hires_by_year_country`
-- Lastly, three additional functions related to the database are defined outside the class:
-  - `create_engine` → creates the database engine
-  - `creating_session` → establishes a session with the database
-  - `closing_session` → closes the created session
+1. **Data Analysis and Visualization:** The project includes various data analysis and visualization tasks. You can leverage this structure to analyze hiring trends, identify popular technologies, and evaluate seniority distributions. The generated visualizations provide an intuitive way to communicate your findings.
 
-> Note: None of the functions in this file (neither within the Workshop class nor outside it) are invoked. Additionally, the data to populate the database originates from a CSV file, which is yet to be read.
+2. **Recruitment Insights:** By examining the trends in candidate hiring, you can gain valuable insights into recruitment practices. The comparison of hiring patterns across different years and countries helps in understanding recruitment strategies' effectiveness.
 
----
+3. **Decision-Making Support:** The visualized data and analytical insights can aid decision-making processes. For instance, understanding which technologies are most sought after by the company or identifying potential gaps in recruitment efforts can guide resource allocation.
 
-#### [Transformation.py]
+4. **Database Integration Practice:** The project demonstrates database integration through SQLAlchemy. This provides a hands-on experience for those looking to enhance their database skills and understand how data flows between Python and a database system.
 
-In this file, all necessary adjustments are made to the CSV for database uploading. The file consists of three functions:
-- The constructor → requests the CSV's name and reads it as a pandas DataFrame.
-- `normalizing` → performs two tasks: renaming the CSV's columns and creating a new column crucial for analysis.
-  - The new column is "is_hired," a boolean column indicating whether candidates were hired or not.
-- `Importing_db` → Defines the function responsible for sending the CSV data to the database. Note that DataFrame indices are specified to populate the "candidate_id" column in the database.
+5. **Customization for Specific Data:** While the current project utilizes a specific dataset, the provided code can serve as a foundation for similar data-related tasks. By modifying the transformations, queries, and visualizations, you can adapt the project to analyze different datasets.
 
----
+### How to Use
 
-### [Main.py]
+To explore the potential applications of this project, follow these steps:
 
-This file orchestrates the calls to the previously created functions, adhering to a necessary order. It also contains loops to display information returned by queries. Furthermore, query results are transformed into DataFrames and then saved into separate CSV files.
+1. Review the code in [Database.py], [Transformation.py], and [Main.py] to understand the structure and functionality.
+2. Identify sections relevant to your analysis goals and customize them to suit your dataset and objectives.
+3. Utilize the provided visualization functions and adjust the charts to visualize data insights effectively.
+4. Run [Main.py] to execute the customized functions and generate query results and visualizations based on your data.
 
-## Conclusions
+Keep in mind that this project provides a template for ETL processes and data analysis. You can build upon it to explore and address specific challenges in data processing and analysis.
 
-- By scrutinizing the initial pie chart where candidates are grouped by technology, it becomes apparent that the most commonly used technologies are DevOps and Game Development. This observation could stem from various factors, such as the possibility that the company specializes in video game development.
-![Hires by Technology](/Viz/Hires_by_Technology.png)
-- Moving on to the second pie chart, which segregates candidates by seniority, we notice a certain balance in the demand across different seniority levels. The quantities hired for each seniority level are remarkably similar.
-![Hires by Seniority](/Viz/Hires_by_Seniority.png)
-- The third graph, a horizontal bar chart, presents the number of individuals hired by the company. Notably, there's a significant drop in hiring for the year 2022 compared to other years. While multiple reasons might account for this, a plausible explanation is that data collection concluded before the year's end, suggested by the absence of records past July.
-![Hires by Years](/Viz/Hires_by_Year.png)
-- In the fourth graph (multiline), a comparison is drawn among specific countries as requested. Intriguingly, the inverse correlation between Brazil and other countries in 2020 stands out. The underlying causes are varied and could be elucidated through a deeper understanding of the business context.
-![Hires by Countries over the years](/Viz/Hires_by_year_countries.png)
+For any questions or assistance, feel free to reach out to Lapiceroazul at lapiceroazul@proton.me.
 
-## Usage
-
-To utilize the provided code, follow these steps:
-1. Review and adjust the import statements in [Database.py], ensuring all required libraries are available.
-2. Provide your own database credentials within the "db_config" JSON file.
-3. Customize the functions in [Database.py] and [Transformation.py] as needed for your specific project requirements.
-4. Run [Main.py] to execute the functions and generate the desired query results and CSV files.
-
-Keep in mind that the code is designed to work with a specific dataset and may require modifications to suit your data and objectives.
-
-For any inquiries or assistance, feel free to contact Lapiceroazul at lapiceroazul@proton.me.

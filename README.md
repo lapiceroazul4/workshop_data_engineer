@@ -1,15 +1,13 @@
-# workshop_data_engineer
-# Repository ReadMe
+<p align="center"><img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=%23FFFFFF&size=25&center=true&vCenter=true&width=1000&height=100&lines=Workshop+001"></a>
+</p>
 
-## Project Usability and Potential Applications
+#### What's this project about
 
-Welcome to the workshop_data_engineer project! This README focuses on illustrating the project's potential applications and how it can be useful.
+Welcome to the workshop_data_engineer project! This is my first python's project, The main objective is to showcase a practical implementation of Extract, Transform, Load (ETL) processes using Python and SQLAlchemy. The project revolves around a dataset containing candidate information from a Technology company. Through various operations, we extract insights, transform data, and load it into a database for then be consumed by power bi.
 
-### Understanding Project Scope
+#### Potential Usages
 
-The main objective of this project is to showcase a practical implementation of Extract, Transform, Load (ETL) processes using Python and SQLAlchemy. The project revolves around a dataset containing candidate information from a Technology company. Through various operations, we extract insights, transform data, and load it into a database for analysis.
-
-### Potential Usages
+> Even when this project is not develop in a real enviroment, performing it helps to improve skills, here are following 
 
 1. **Data Analysis and Visualization:** The project includes various data analysis and visualization tasks. You can leverage this structure to analyze hiring trends, identify popular technologies, and evaluate seniority distributions. The generated visualizations provide an intuitive way to communicate your findings.
 
@@ -21,16 +19,41 @@ The main objective of this project is to showcase a practical implementation of 
 
 5. **Customization for Specific Data:** While the current project utilizes a specific dataset, the provided code can serve as a foundation for similar data-related tasks. By modifying the transformations, queries, and visualizations, you can adapt the project to analyze different datasets.
 
-### How to Use
+#### Folders' Structures
+
+```
+workshop_data_engineer/
+├── 0_src
+│   ├── main.py
+│   ├── db.py
+│   ├── transformation.py
+├── 1_csv/                      
+│   ├── hires_seniority.csv     
+│   ├── hires_technology.csv    
+│   ├── hires_year_and_country.csv  
+│   └── hires_year.csv          
+├── 2_viz/                      
+│   ├── Hires_by_Seniority.png  
+│   ├── Hires_by_Technology.png 
+│   ├── Hires_by_year_countries.png 
+│   ├── Hires_by_Year.png       
+│   └── Viz.pdf                 
+├── .gitignore                              
+├── README.md                  
+├── requirements.txt            
+└──           
+```
+
+### How does it work?
 
 To explore the potential applications of this project, follow these steps:
 
-1. Review the code in [Database.py], [Transformation.py], and [Main.py] to understand the structure and functionality.
-2. Identify sections relevant to your analysis goals and customize them to suit your dataset and objectives.
-3. Utilize the provided visualization functions and adjust the charts to visualize data insights effectively.
-4. Run [Main.py] to execute the customized functions and generate query results and visualizations based on your data.
+1. First you must go to [0_src] and create a file called [db_config.json] and store there the credentials for the database where you want to store the data 
+    > If you want to get a better understanding of how this works, review the code in [0_src] to understand the structure and functionality.
 
-Keep in mind that this project provides a template for ETL processes and data analysis. You can build upon it to explore and address specific challenges in data processing and analysis.
+2. The dashboard was perfomed using the data stored in the folder [1_csv]
+3. Once you have everything set up you can run [main.py]
+
 
 For any questions or assistance, feel free to reach out to Lapiceroazul at lapiceroazul@proton.me.
 
